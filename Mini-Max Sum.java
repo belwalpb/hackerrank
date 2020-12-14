@@ -11,11 +11,16 @@ public class Solution {
     // Complete the miniMaxSum function below.
     static void miniMaxSum(int[] arr) {
 
-        Arrays.sort(arr);
-    int min = arr[0] + arr[1] +arr[2] +arr[3] ;
-    int max= arr[4] + arr[1] +arr[2] +arr[3] ;
-        System.out.println(min+" "+max);
+       long max = 0, min= 0 , sum =0;
+       max = min = sum = arr[0];
 
+        for (int i = 1; i < 5; i++) {
+            
+            if(arr[i]>max) max = arr[i];
+            if(arr[i]<min) min = arr[i];
+            sum += arr[i];
+        }
+  System.out.println( (sum - max) + " " + (sum - min));
     }
 
     private static final Scanner scanner = new Scanner(System.in);
